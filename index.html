@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Hollow Knight</title>
+</head>
+<body>
+
+    <main>
+        <!-- Portada -->
+        <section id="firstSectionHome">
+            <div class="container-fluid">
+                <div class="row">
+                    <video class="col-12" autoplay muted loop src="./assets/videos/Hollow-Knight-light.mp4" type="video/mp4" alt="Hollow Knight wallpaper video"></video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conoce a los personajes -->
+        <section id="secondSectionHome">
+            <div class="container-fluid">
+                <div class="row p-5">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center align-items-lg-start">
+                        <h1>Hollow Knight</h1>
+                        <p> Conoce a los personajes de este inframundo: <i>Hollow Knight</i>.<br><br>
+                            Debajo de la desvanecida ciudad de <i>Dirtmouth</i> duerme un vasto y antiguo reino. Muchos son atraídos bajo la superficie, en busca de riquezas, gloria o respuestas a viejos secretos.<br><br>
+                            Como el enigmático Caballero, atravesarás las profundidades, desentrañarás sus misterios y conquistarás sus males.
+                        </p>   
+                        <button class="buttonPrincipal mb-4"><a>Próximamente</a></button>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <img src="./assets/images/hollow-knight-personaje.webp" class="img-fluid" alt="Hollow Knight personaje">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEMO -->
+        <section id="thirdSectionHome">
+            <h2 class="text-center">DEMO</h2>
+            <h4 class="text-center">Selecciona un personaje, y tira los dados para sacar su vida, fuerza y defensa</h4>
+            <div class="container">
+                <div class="row m-2">
+                    <div class="col-lg-3 text-center">
+                        <i class="bi bi-shield-minus" style="font-size: 6em"></i>
+                        <h4>Knight</h4>
+                        <ul>
+                            <li>Nombre: Knight</li>
+                            <li>Arma: Aguijón</li>
+                            <li>Amuleto: Corazón del vacío</li>
+                            <li>Hechizo: Garra de Mantis</li>
+                            <li>Habilidad: Gran corte</li>
+                            <button class="buttonPrincipal buttonSelectPersonaje" id="buttonKnight">Seleccionar</button>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 text-center">
+                        <i class="bi bi-lightning" style="font-size: 6em"></i>
+                        <h4>Hornet</h4>
+                        <ul>
+                            <li>Nombre: Hornet</li>
+                            <li>Arma: Aguja</li>
+                            <li>Amuleto: Capa de la Cazadora</li>
+                            <li>Hechizo: Aguja Onírica</li>
+                            <li>Habilidad: Vínculo</li>
+                            <button class="buttonPrincipal buttonSelectPersonaje" id="buttonHornet">Seleccionar</button>
+                        </ul>                    
+                    </div>
+
+                    <div class="col-lg-3 text-center">
+                        <i class="bi bi-compass" style="font-size: 6em"></i>
+                        <h4>Cornifer</h4>
+                        <ul>
+                            <li>Nombre: Cornifer</li>
+                            <li>Arma: Bastón</li>
+                            <li>Amuleto: Brújula Caprichosa</li>
+                            <li>Hechizo: Sentido del Mundo</li>
+                            <li>Habilidad: Concentración</li>
+                            <button class="buttonPrincipal buttonSelectPersonaje" id="buttonCornifer">Seleccionar</button>
+                        </ul>                    
+                    </div>
+
+                    <div class="col-lg-3 text-center">
+                        <i class="bi bi-pen" style="font-size: 6em"></i>
+                        <h4>Iselda</h4>
+                        <ul>
+                            <li>Nombre: Iselda</li>
+                            <li>Arma: Pluma</li>
+                            <li>Amuleto: Capa Sombría</li>
+                            <li>Hechizo: Ascensión</li>
+                            <li>Habilidad: Vuelo Desolador</li>
+                            <button class="buttonPrincipal buttonSelectPersonaje" id="buttonIselda">Seleccionar</button>
+                        </ul>                    
+                    </div>
+
+                    <!-- Contenedor de los dados -->
+                    <div id="diceSection" class="text-center" style="display:none">
+                        <h4>Tira los dados:</h4>
+                        <div id="diceContainer">
+                          <div id="diceVida">Vida: ?</div>
+                          <div id="diceFuerza">Fuerza: ?</div>
+                          <div id="diceDefensa">Defensa: ?</div>
+                        </div>
+                        <button id="tirarDados" class="buttonPrincipal">Tirar dados</button><br>
+                        <button id="guardarValores" class="buttonPrincipal">Guardar valores</button><br>
+                        <button id="mostrarValores" class="buttonSecundario">Mostrar valores</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Quienes somos -->
+        <section id="fourthSectionHome">
+            <div class="container-fluid">
+                <div class="row p-5">
+                    <div class="col-lg-6 order-lg-2 d-flex flex-column justify-content-center align-items-center align-items-lg-start">
+                        <h2>¿Quiénes somos?</h2>
+                        <p> Conoce al equipo.<br><br>
+                            <i>Team Cherry</i> es un desarrollador de juegos independiente en Adelaida, Australia Meridional. Su misión es construir mundos locos y emocionantes para que los jugadores exploren y conquisten.</p>   
+                        <button class="buttonPrincipal"><a>Próximamente</a></button>
+                    </div>
+
+                    <div class="col-lg-6 order-lg-1 d-flex justify-content-center">
+                        <img src="./assets/images/team-cherry-logowhite.webp" class="img-fluid"  alt="Hollow Knight personaje">
+                    </div>  
+                </div>
+            </div>
+        </section>
+
+        <!-- Apartado para comprar -->
+        <section id="fifthSectionHome">
+            <div class="container-fluid d-flex flex-column justify-content-center align-items-center p-3 h-100">
+                <h2 class="text-center">¡No te lo pierdas!</h2>
+                <button class="buttonPrincipal text-center"><a>Próximamente en venta</a></button>
+            </div>
+        </section>
+
+    </main>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
